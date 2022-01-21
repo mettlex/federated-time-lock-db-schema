@@ -1,0 +1,22 @@
+{
+  "name": "federated-time-lock-db-schema",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "start": "prisma studio",
+    "migrate": "prisma migrate dev"
+  },
+  "keywords": [],
+  "author": "Mettle X",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "prisma": "^3.8.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.8.1"
+  }
+}

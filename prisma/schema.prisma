@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Key {
+  id                      String   @id @default(cuid()) // must be collision-free
+  random_bytes_digest     String   @unique @db.VarChar(512) // must be unique
+  first_secret_key_digest String   @db.VarChar(512) // denoted by "f"
+  duration_in_seconds     Int      @default(1) // +2147483647 supports about 68 years, denoted by "d"
+  encrypted_second_key    String   @db.VarChar(512) // denoted by "e"
+  created_at              DateTime @default(now()) // centralized timestamp, insecure
+
+  @@map(name: "keys")
+}
