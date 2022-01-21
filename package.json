@@ -5,7 +5,9 @@
   "description": "",
   "scripts": {
     "start": "prisma studio",
-    "migrate": "prisma migrate dev"
+    "migrate": "prisma migrate dev",
+    "sync": "prisma db pull",
+    "deploy": "prisma db push"
   },
   "keywords": [],
   "author": "Mettle X",
